@@ -17,6 +17,7 @@ bot.loadFile('./training-data.rive', function(){
 
 function ask() {
     rl.question('You: ', (message) => {
+        if(message === 'bye') process.exit();
         var reply = bot.reply('local-user', message);
         console.log(Chalk.red('Jarvis: ' + reply));
         ask();
